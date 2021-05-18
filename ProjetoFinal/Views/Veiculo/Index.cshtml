@@ -1,0 +1,83 @@
+﻿@model IEnumerable<ProjetoFinal.Models.Veiculo>
+    <body style="background-image:url(imagem/principal.jpg) ; background-repeat: no-repeat; background-attachment: fixed; background-size: 100%; background-size:cover; font-family:Verdana">
+        <div class="container p-5">
+            <div class="row pt-4">
+                <div class="col-6">
+                    <h2 class="text-white">Veículos</h2>
+                </div>
+            </div>
+            <br />
+            @using (Html.BeginForm())
+            {
+                <p class="text-white">
+                    Pesquisar: @Html.TextBox("SearchString")
+                    <input type="submit" value="Buscar" />
+                </p>
+            }
+
+
+            @if (Model.Count() > 0)
+            {
+                <table class="table table-dark">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.ActionLink("Nome", "Index", new { sortOrder = ViewBag.NomeParam })
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Marca)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Modelo)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Ano)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Cor)
+                            </th>
+                            <th>
+                                @Html.ActionLink("Placa", "Index", new { sortOrder = ViewBag.PlacaParm })
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Nome)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Marca)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Modelo)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Ano)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Cor)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Placa)
+                                </td>
+                                <td>
+                                    <div class=" w-100 btn-group" role="group">
+                                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn-warning mx-1">Editar</a> |
+                                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn-danger mx-1">Deletar</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <p>Nenhum Veículo Cadastrado</p>
+            }
+        </div>
+    </body>

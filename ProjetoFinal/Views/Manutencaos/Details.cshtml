@@ -1,0 +1,27 @@
+﻿@model ProjetoFinal.Models.Manutencao
+
+@{
+    ViewData["Title"] = "Details";
+}
+<body style="font-family:Verdana">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div>
+        <h2 class="text-black pl-3" style="font-size: 50px">Informações</h2>
+        <div>
+            <br />
+            <br />
+            <dl>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Registro)
+                </dt>
+                <dd>
+                    <br />
+                    @Html.DisplayFor(model => model.Registro)
+                </dd>
+            </dl>
+        </div>
+        <div>
+            <a asp-action="Index" class="btn btn-danger">Voltar</a>
+        </div>
+    </div>
+</body>

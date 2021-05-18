@@ -1,0 +1,55 @@
+﻿@model ProjetoFinal.Models.Manutencao
+
+@{
+    ViewData["Title"] = "Create";
+}
+<body style="font-family:Verdana">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div>
+        <h2 class="text-primary-50 pl-3">Novo Registro de manutenção</h2>
+    </div>
+    <br />
+    <br />
+    <div class="row">
+        <div class="col-12">
+            <div class="row">
+                <div class="col-md-4">
+                    <form asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="PlacaVeiculo" class="control-label"></label>
+                            <input asp-for="PlacaVeiculo" class="form-control" />
+                            <span asp-validation-for="PlacaVeiculo" class="text-danger"></span>
+                        </div>
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="QuantidadeKm" class="control-label"></label>
+                            <input asp-for="QuantidadeKm" class="form-control" />
+                            <span asp-validation-for="QuantidadeKm" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Registro" class="control-label"></label>
+                            <input asp-for="Registro" class="form-control" />
+                            <span asp-validation-for="Registro" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Agenda" class="control-label"></label>
+                            <input asp-for="Agenda" class="form-control" />
+                            <span asp-validation-for="Agenda" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col">
+                            <input type="submit" value="Cadastrar" class="btn btn-success w-100" />
+                        </div>
+                        <div class="form-group col">
+                            <a asp-action="Index" class="btn btn-danger w-100">Voltar</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            @section Scripts {
+                @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+            }
+        </div>
+    </div>
+</body>

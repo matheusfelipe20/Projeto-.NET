@@ -1,0 +1,67 @@
+﻿@model ProjetoFinal.Models.Veiculo
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<body style="font-family:Verdana">
+    <br />
+    <br />
+        <h2 class="text-black pl-3" style="font-size: 50px">Deletar Veículo</h2>
+        <br />
+        <dl class=" row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Nome)
+                <br />
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Nome)
+                <br />
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Marca)
+                <br />
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Marca)
+                <br />
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Modelo)
+                <br />
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Modelo)
+                <br />
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Ano)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Ano)
+                <br />
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Cor)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Cor)
+            </dd>
+
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Placa)
+                <br />
+            </dt>
+
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Placa)
+                <br />
+            </dd>
+        </dl>
+
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <input type="submit" value="Deletar" class="btn btn-danger w-25" />
+            <a asp-action="Index" class="btn btn-info w-25">Voltar</a>
+        </form>
+</body>
+       

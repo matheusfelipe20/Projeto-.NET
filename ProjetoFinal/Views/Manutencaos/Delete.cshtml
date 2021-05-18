@@ -1,0 +1,53 @@
+﻿@model ProjetoFinal.Models.Manutencao
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<body style="font-family:Verdana">
+    <br />
+    <br />
+    <h2 class="text-black pl-3" style="font-size: 50px">Deletar Registro</h2>
+    <br />
+    <br />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PlacaVeiculo)
+        </dt>
+        <dt class="col-sm-10">
+            @Html.DisplayFor(model => model.PlacaVeiculo)
+            <br />
+            <br />
+        </dt>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.QuantidadeKm)
+            <br />
+            <br />
+        </dt>
+        <dd class="col-sm-10">
+            <br />
+            @Html.DisplayFor(model => model.QuantidadeKm)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Registro)
+        </dt>
+        <dd class="col-sm-10">
+            <br />
+            @Html.DisplayFor(model => model.Registro)
+        </dd>
+        <dt class="col-sm-2">
+            <br />
+            @Html.DisplayNameFor(model => model.Agenda)
+        </dt>
+        <dd class="col-sm-10">
+            <br />
+            <br />
+            @Html.DisplayFor(model => model.Agenda)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Deletar" class="btn btn-danger w-25" />
+        <a asp-action="Index" class="btn btn-info w-25">Voltar</a>
+    </form>
+</body>
